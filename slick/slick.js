@@ -1451,6 +1451,8 @@
 
         if (_.options.focusOnSelect === true) {
             $(_.$slideTrack).children().on('click.slick', _.selectHandler);
+        } else if (_.options.focusOnSelect === false) {
+            $(_.$slideTrack).children().off('click.slick', _.selectHandler);
         }
 
         $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
